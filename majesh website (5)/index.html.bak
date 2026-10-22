@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Awasya Tour and Travels | Taxi Service in Indore, Bhopal &amp; Ujjain</title>
+    <meta name="description" content="Awasya Tour and Travels offers local taxis, airport transfers, corporate travel, rental cabs and outstation trips in Indore, Bhopal and Ujjain."/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+            --primary: #163A34;
+            --secondary: #227A65;
+            --accent: #D97745;
+            --whatsapp: #25D366;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .premium-shadow {
+            box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.12);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.8) 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+                /* Hero Section Scoped Styles & Animations */
+        @keyframes heroSlideUp {
+            from { opacity: 0; transform: translateY(22px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        #hero .hero-fade { opacity: 0; animation: heroSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        #hero .hero-fade-1 { animation-delay: 0.12s; }
+        #hero .hero-fade-2 { animation-delay: 0.24s; }
+        #hero .hero-fade-3 { animation-delay: 0.36s; }
+        #hero .hero-fade-4 { animation-delay: 0.48s; }
+        #hero .hero-fade-5 { animation-delay: 0.60s; }
+
+        @keyframes heroCarFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        #hero .hero-car-float {
+            animation: heroCarFloat 4.8s ease-in-out infinite;
+            filter: drop-shadow(0 35px 30px rgba(2, 6, 20, 0.45));
+        }
+
+        #hero .hero-cta {
+            transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+        }
+        #hero .hero-cta:hover {
+            transform: translateY(-3px) scale(1.015);
+            filter: brightness(1.06);
+        }
+        #hero .hero-trust-card {
+            transition: transform .25s ease, border-color .25s ease, background-color .25s ease;
+        }
+        #hero .hero-trust-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-[#F7F4EB] text-[#1E293B] overflow-x-hidden">
+
+<!-- Navbar -->
+<nav class="fixed top-0 w-full z-[100] bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 h-16 flex justify-between items-center">
+        <a class="flex items-center gap-2" href="#">
+            <span class="font-extrabold text-2xl tracking-tighter text-[#163A34]">Awasya Tour and Travels</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="nav-link font-medium text-sm text-slate-600 hover:text-[#1A5A4C]" href="#services" onclick="closeMobileMenu()">Services</a>
+            <a class="nav-link font-medium text-sm text-slate-600 hover:text-[#1A5A4C]" href="#fleet" onclick="closeMobileMenu()">Fleet</a>
+            <a class="nav-link font-medium text-sm text-slate-600 hover:text-[#1A5A4C]" href="#routes" onclick="closeMobileMenu()">Routes</a>
+            <a class="nav-link font-medium text-sm text-slate-600 hover:text-[#1A5A4C]" href="#about" onclick="closeMobileMenu()">About</a>
+            <a class="bg-[#163A34] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-[#1E293B] transition-all flex items-center gap-2" href="tel:9926547855">
+                <span class="material-symbols-outlined text-[18px]">call</span> 9926547855
+            </a>
+        </div>
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="md:hidden material-symbols-outlined text-slate-900 text-3xl focus:outline-none p-2 cursor-pointer select-none">menu</button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-b border-slate-200 px-6 py-5 shadow-2xl transition-all">
+        <div class="flex flex-col gap-3">
+            <a class="font-bold text-base text-slate-800 hover:text-[#1A5A4C] py-3 border-b border-slate-100 flex items-center justify-between" href="#services" onclick="closeMobileMenu()">
+                <span>Services</span>
+                <span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+            </a>
+            <a class="font-bold text-base text-slate-800 hover:text-[#1A5A4C] py-3 border-b border-slate-100 flex items-center justify-between" href="#fleet" onclick="closeMobileMenu()">
+                <span>Luxury Fleet</span>
+                <span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+            </a>
+            <a class="font-bold text-base text-slate-800 hover:text-[#1A5A4C] py-3 border-b border-slate-100 flex items-center justify-between" href="#routes" onclick="closeMobileMenu()">
+                <span>Outstation Routes</span>
+                <span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+            </a>
+            <a class="font-bold text-base text-slate-800 hover:text-[#1A5A4C] py-3 border-b border-slate-100 flex items-center justify-between" href="#about" onclick="closeMobileMenu()">
+                <span>About Us</span>
+                <span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+            </a>
+            <a class="bg-[#163A34] text-white px-5 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 mt-2 shadow-lg" href="tel:9926547855" onclick="closeMobileMenu()">
+                <span class="material-symbols-outlined text-[18px]">call</span> Call 9926547855
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Awasya editorial hero -->
+<section class="relative isolate overflow-hidden bg-[#F7F4EB] pt-16" id="hero">
+    <div class="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#E8D9C3]/50 blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 h-40 w-40 rounded-full bg-[#DDE8D8]/70 blur-3xl"></div>
+    <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-12 sm:px-8 md:py-16 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 lg:px-10 lg:py-20">
+        <div class="relative z-10">
+            <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-[#D9D0BE] bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#227A65]">
+                <span class="h-2 w-2 rounded-full bg-[#D97745]"></span> Central India, at your pace
+            </div>
+            <h1 class="max-w-2xl font-serif text-5xl font-semibold leading-[1.04] tracking-tight text-[#163A34] sm:text-6xl lg:text-7xl">
+                The journey is part of the <span class="italic text-[#D97745]">story.</span>
+            </h1>
+            <p class="mt-6 max-w-xl text-lg leading-8 text-[#52645D]">Comfortable local rides and thoughtfully planned outstation trips from Indore, Bhopal and Ujjain.</p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a class="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-[#227A65] px-6 py-4 font-bold text-white shadow-lg shadow-[#227A65]/20 transition hover:-translate-y-0.5 hover:bg-[#1A5A4C]" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%20please%20help%20me%20plan%20a%20trip." target="_blank" rel="noopener noreferrer">
+                    <span class="material-symbols-outlined">chat</span> Plan a trip on WhatsApp
+                </a>
+                <a class="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl border border-[#BFC9BE] bg-white/70 px-6 py-4 font-bold text-[#163A34] transition hover:bg-white" href="tel:9926547855">
+                    <span class="material-symbols-outlined">call</span> 99265 47855
+                </a>
+            </div>
+            <div class="mt-9 flex flex-wrap gap-x-6 gap-y-3 border-t border-[#DDD6C8] pt-5 text-sm font-semibold text-[#52645D]">
+                <span><span class="mr-2 text-[#D97745]">✳</span>City & airport rides</span>
+                <span><span class="mr-2 text-[#D97745]">✳</span>Outstation journeys</span>
+                <span><span class="mr-2 text-[#D97745]">✳</span>Group travel</span>
+            </div>
+        </div>
+        <div class="relative mx-auto w-full max-w-2xl lg:max-w-none">
+            <div class="absolute -left-5 top-10 z-10 hidden h-24 w-24 rounded-full border border-[#D97745]/40 sm:block"></div>
+            <div class="relative overflow-hidden rounded-[2rem] border-[8px] border-white shadow-[0_30px_80px_-30px_rgba(22,58,52,0.4)]">
+                <img alt="Awasya travel vehicle at a scenic Madhya Pradesh viewpoint" class="h-[360px] w-full object-cover sm:h-[480px]" src="images/awasya-scenic-drive.png"/>
+                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#163A34]/80 to-transparent p-6 pt-24 text-white sm:p-8 sm:pt-28">
+                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-white/75">Your Central India connection</p>
+                    <p class="mt-2 font-serif text-2xl font-semibold sm:text-3xl">Indore · Bhopal · Ujjain</p>
+                </div>
+            </div>
+            <div class="absolute -bottom-5 right-4 rounded-2xl border border-[#E6DDCC] bg-white px-5 py-4 shadow-xl sm:-right-5 sm:px-6">
+                <p class="text-xs font-bold uppercase tracking-widest text-[#8A9287]">Choose your ride</p>
+                <p class="mt-1 font-bold text-[#163A34]">Sedan · SUV · Traveller</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section (With High Resolution Image Replaced) -->
+<section class="py-24 bg-white" id="about">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <span class="text-[#227A65] font-bold tracking-[0.2em] uppercase text-sm">About Us</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-[#163A34] leading-tight">A ride for every kind of journey</h2>
+                <div class="text-slate-600 space-y-6 leading-relaxed text-lg">
+                    <p>From a quick city pickup to a full-day temple visit, Awasya helps you travel comfortably across Indore, Bhopal, Ujjain and nearby destinations.</p>
+                    <p>Whether you need a quick local ride, a timely airport drop, or a comfortable long-distance journey across India, our fleet and experienced chauffeurs are ready to serve you 24/7. We pride ourselves on maintaining a pristine fleet ranging from economy sedans to luxury SUVs.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-full bg-emerald-50 text-[#227A65] flex items-center justify-center material-symbols-outlined">verified</span>
+                        <span class="font-bold">Multiple Vehicle Options</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-full bg-emerald-50 text-[#227A65] flex items-center justify-center material-symbols-outlined">shield_person</span>
+                        <span class="font-bold">Safe for Families</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="rounded-3xl overflow-hidden shadow-2xl">
+                    <img alt="Awasya chauffeur and taxi beside a Madhya Pradesh riverside" class="w-full h-full object-cover" src="images/awasya-riverside-driver.png"/>
+                </div>
+                <div class="absolute -bottom-10 -right-10 bg-[#163A34] p-10 rounded-3xl text-white shadow-2xl hidden lg:block">
+                    <div class="text-4xl font-extrabold text-[#D97745]">24/7</div>
+                    <div class="text-sm font-medium opacity-80 uppercase tracking-widest mt-2">Booking Support</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Elite Travel Services -->
+<!-- Elite Travel Services (Redesigned Premium Experience Section) -->
+<section class="py-20 md:py-24 bg-[#F7F4EB] border-y border-slate-200/60 relative" id="services">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14 md:mb-16 hero-fade">
+            <span class="text-[#227A65] font-bold tracking-[0.2em] uppercase text-xs sm:text-sm bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-100 inline-block mb-3">Our Expertise</span>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#163A34] tracking-tight mb-4">Elite Travel Services</h2>
+            <p class="text-slate-600 text-base sm:text-lg font-normal leading-relaxed">
+                Reliable taxi solutions for local travel, airport transfers, corporate trips, rentals and outstation journeys across India.
+            </p>
+        </div>
+
+        <!-- Service Cards Responsive Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+            
+            <!-- Card 1: Local Taxi -->
+            <div class="hero-fade hero-fade-1 bg-white rounded-2xl border-t-4 border-[#227A65] border-x border-b border-slate-100 shadow-md shadow-slate-200/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                <div class="p-6 flex-1 flex flex-col">
+                    <div class="h-48 -mx-6 -mt-6 mb-6 overflow-hidden relative">
+                        <img src="images/extracted_img_2.jpg" alt="Local Taxi Service in Indore" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
+                        <span class="absolute bottom-3 left-4 text-xs font-bold text-white uppercase tracking-wider bg-[#163A34]/80 px-2.5 py-1 rounded-md backdrop-blur-sm">Point To Point</span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#163A34] mb-2.5 group-hover:text-[#1A5A4C] transition-colors">Local Taxi</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-1">
+                        Point-to-point city cab service in Indore, Bhopal and Ujjain for daily travel, shopping and local commutes.
+                    </p>
+                    
+                    <!-- Feature Row Badges -->
+                    <div class="grid grid-cols-2 gap-2 pt-4 border-t border-slate-100 text-[11px] font-semibold text-slate-700 mb-6">
+                        <div class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">⚡</span> 24×7 Service</div>
+                        <div class="flex items-center gap-1.5"><span class="text-blue-500 font-bold">👨‍✈️</span> Pro Driver</div>
+                        <div class="flex items-center gap-1.5"><span class="text-amber-500 font-bold">✨</span> Clean Car</div>
+                        <div class="flex items-center gap-1.5"><span class="text-indigo-500 font-bold">📍</span> GPS Tracked</div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a class="w-full h-12 bg-[#227A65] text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-emerald-800 shadow-md hover:shadow-lg transition-all active:scale-[0.99]" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%0A%0AI%20would%20like%20to%20book%20a%20Local%20Taxi.%0A%0APickup%20Location%3A%0ADrop%20Location%3A%0ADate%3A%0ATime%3A%0APassengers%3A%0A%0APlease%20share%20the%20fare%20and%20availability." target="_blank" rel="noopener noreferrer">
+                        <span>Book Service</span>
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: Airport Transfer -->
+            <div class="hero-fade hero-fade-2 bg-white rounded-2xl border-t-4 border-[#227A65] border-x border-b border-slate-100 shadow-md shadow-slate-200/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                <div class="p-6 flex-1 flex flex-col">
+                    <div class="h-48 -mx-6 -mt-6 mb-6 overflow-hidden relative">
+                        <img src="images/extracted_img_3.jpg" alt="Airport Transfers Transfer Taxi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
+                        <span class="absolute bottom-3 left-4 text-xs font-bold text-white uppercase tracking-wider bg-[#163A34]/80 px-2.5 py-1 rounded-md backdrop-blur-sm">Airport Transfers</span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#163A34] mb-2.5 group-hover:text-[#1A5A4C] transition-colors">Airport Transfer</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-1">
+                        Airport pickup and drop-off bookings available on request, with trip details coordinated over WhatsApp.
+                    </p>
+                    
+                    <!-- Feature Row Badges -->
+                    <div class="grid grid-cols-2 gap-2 pt-4 border-t border-slate-100 text-[11px] font-semibold text-slate-700 mb-6">
+                        <div class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">⚡</span> 24×7 Service</div>
+                        <div class="flex items-center gap-1.5"><span class="text-blue-500 font-bold">👨‍✈️</span> Pro Driver</div>
+                        <div class="flex items-center gap-1.5"><span class="text-amber-500 font-bold">✨</span> Clean Car</div>
+                        <div class="flex items-center gap-1.5"><span class="text-indigo-500 font-bold">📍</span> GPS Tracked</div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a class="w-full h-12 bg-[#227A65] text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-emerald-800 shadow-md hover:shadow-lg transition-all active:scale-[0.99]" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%0A%0AI%20would%20like%20to%20book%20an%20Airport%20Transfer.%0A%0APickup%20Address%3A%0AFlight%20Number%3A%0ADate%3A%0ATime%3A%0APassengers%3A%0A%0APlease%20confirm%20availability." target="_blank" rel="noopener noreferrer">
+                        <span>Book Service</span>
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3: Corporate Travel -->
+            <div class="hero-fade hero-fade-3 bg-white rounded-2xl border-t-4 border-[#227A65] border-x border-b border-slate-100 shadow-md shadow-slate-200/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                <div class="p-6 flex-1 flex flex-col">
+                    <div class="h-48 -mx-6 -mt-6 mb-6 overflow-hidden relative">
+                        <img src="images/extracted_img_4.jpg" alt="Corporate Executive Travel Taxi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
+                        <span class="absolute bottom-3 left-4 text-xs font-bold text-white uppercase tracking-wider bg-[#163A34]/80 px-2.5 py-1 rounded-md backdrop-blur-sm">Executive Class</span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#163A34] mb-2.5 group-hover:text-[#1A5A4C] transition-colors">Corporate Travel</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-1">
+                        Executive luxury cars and customized rental solutions for business meetings and corporate events.
+                    </p>
+                    
+                    <!-- Feature Row Badges -->
+                    <div class="grid grid-cols-2 gap-2 pt-4 border-t border-slate-100 text-[11px] font-semibold text-slate-700 mb-6">
+                        <div class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">⚡</span> 24×7 Service</div>
+                        <div class="flex items-center gap-1.5"><span class="text-blue-500 font-bold">👨‍✈️</span> Pro Driver</div>
+                        <div class="flex items-center gap-1.5"><span class="text-amber-500 font-bold">✨</span> Clean Car</div>
+                        <div class="flex items-center gap-1.5"><span class="text-indigo-500 font-bold">📍</span> GPS Tracked</div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a class="w-full h-12 bg-[#227A65] text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-emerald-800 shadow-md hover:shadow-lg transition-all active:scale-[0.99]" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%0A%0AI%20need%20a%20Corporate%20Taxi%20service.%0A%0APickup%20Location%3A%0ADestination%3A%0ADate%3A%0ATime%3A%0ACompany%20Name%3A%0A%0APlease%20share%20the%20quotation." target="_blank" rel="noopener noreferrer">
+                        <span>Book Service</span>
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4: Rental Packages -->
+            <div class="hero-fade hero-fade-4 bg-white rounded-2xl border-t-4 border-[#227A65] border-x border-b border-slate-100 shadow-md shadow-slate-200/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                <div class="p-6 flex-1 flex flex-col">
+                    <div class="h-48 -mx-6 -mt-6 mb-6 overflow-hidden relative">
+                        <img src="images/extracted_img_5.jpg" alt="Flexible Rental Package Taxi" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
+                        <span class="absolute bottom-3 left-4 text-xs font-bold text-white uppercase tracking-wider bg-[#163A34]/80 px-2.5 py-1 rounded-md backdrop-blur-sm">Hourly & Daily</span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#163A34] mb-2.5 group-hover:text-[#1A5A4C] transition-colors">Rental Packages</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-1">
+                        Flexible hourly & daily rental packages with private chauffeurs for city tours and family events.
+                    </p>
+                    
+                    <!-- Feature Row Badges -->
+                    <div class="grid grid-cols-2 gap-2 pt-4 border-t border-slate-100 text-[11px] font-semibold text-slate-700 mb-6">
+                        <div class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">⚡</span> 24×7 Service</div>
+                        <div class="flex items-center gap-1.5"><span class="text-blue-500 font-bold">👨‍✈️</span> Pro Driver</div>
+                        <div class="flex items-center gap-2.5"><span class="text-amber-500 font-bold">✨</span> Clean Car</div>
+                        <div class="flex items-center gap-1.5"><span class="text-indigo-500 font-bold">📍</span> GPS Tracked</div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a class="w-full h-12 bg-[#227A65] text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-emerald-800 shadow-md hover:shadow-lg transition-all active:scale-[0.99]" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%0A%0AI%20want%20to%20book%20a%20Rental%20Taxi.%0A%0AVehicle%20Preference%3A%0APickup%20Location%3A%0ADate%3A%0ADuration%3A%0A%0APlease%20share%20the%20package%20details." target="_blank" rel="noopener noreferrer">
+                        <span>Book Service</span>
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 5: Outstation Taxi -->
+            <div class="hero-fade hero-fade-5 bg-white rounded-2xl border-t-4 border-[#227A65] border-x border-b border-slate-100 shadow-md shadow-slate-200/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                <div class="p-6 flex-1 flex flex-col">
+                    <div class="h-48 -mx-6 -mt-6 mb-6 overflow-hidden relative">
+                        <img src="images/extracted_img_6.jpg" alt="Outstation Intercity Taxi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
+                        <span class="absolute bottom-3 left-4 text-xs font-bold text-white uppercase tracking-wider bg-[#163A34]/80 px-2.5 py-1 rounded-md backdrop-blur-sm">Intercity Drive</span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#163A34] mb-2.5 group-hover:text-[#1A5A4C] transition-colors">Outstation Taxi</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-1">
+                        Safe, comfortable intercity trips with experienced highway drivers for round-trips or one-way drops.
+                    </p>
+                    
+                    <!-- Feature Row Badges -->
+                    <div class="grid grid-cols-2 gap-2 pt-4 border-t border-slate-100 text-[11px] font-semibold text-slate-700 mb-6">
+                        <div class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">⚡</span> 24×7 Service</div>
+                        <div class="flex items-center gap-1.5"><span class="text-blue-500 font-bold">👨‍✈️</span> Pro Driver</div>
+                        <div class="flex items-center gap-1.5"><span class="text-amber-500 font-bold">✨</span> Clean Car</div>
+                        <div class="flex items-center gap-1.5"><span class="text-indigo-500 font-bold">📍</span> GPS Tracked</div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a class="w-full h-12 bg-[#227A65] text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-emerald-800 shadow-md hover:shadow-lg transition-all active:scale-[0.99]" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%0A%0AI%20would%20like%20to%20book%20an%20Outstation%20Taxi.%0A%0ADestination%3A%0APickup%20Location%3A%0ADate%3A%0APassengers%3A%0A%0APlease%20share%20the%20best%20quotation." target="_blank" rel="noopener noreferrer">
+                        <span>Book Service</span>
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 6: All India Taxi -->
+            <div class="hero-fade hero-fade-6 bg-white rounded-2xl border-t-4 border-[#227A65] border-x border-b border-slate-100 shadow-md shadow-slate-200/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                <div class="p-6 flex-1 flex flex-col">
+                    <div class="h-48 -mx-6 -mt-6 mb-6 overflow-hidden relative">
+                        <img src="images/extracted_img_7.jpg" alt="All India Tourist Permit Taxi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
+                        <span class="absolute bottom-3 left-4 text-xs font-bold text-white uppercase tracking-wider bg-[#163A34]/80 px-2.5 py-1 rounded-md backdrop-blur-sm">Pan India Permit</span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#163A34] mb-2.5 group-hover:text-[#1A5A4C] transition-colors">All India Taxi</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-1">
+                        Seamless nationwide travel covering major cities and tourist destinations with All India Tourist Permits.
+                    </p>
+                    
+                    <!-- Feature Row Badges -->
+                    <div class="grid grid-cols-2 gap-2 pt-4 border-t border-slate-100 text-[11px] font-semibold text-slate-700 mb-6">
+                        <div class="flex items-center gap-1.5"><span class="text-emerald-500 font-bold">⚡</span> 24×7 Service</div>
+                        <div class="flex items-center gap-1.5"><span class="text-blue-500 font-bold">👨‍✈️</span> Pro Driver</div>
+                        <div class="flex items-center gap-1.5"><span class="text-amber-500 font-bold">✨</span> Clean Car</div>
+                        <div class="flex items-center gap-1.5"><span class="text-indigo-500 font-bold">📍</span> GPS Tracked</div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a class="w-full h-12 bg-[#227A65] text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-emerald-800 shadow-md hover:shadow-lg transition-all active:scale-[0.99]" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%0A%0AI%20need%20a%20Taxi%20for%20travel%20across%20India.%0A%0APickup%20City%3A%0ADestination%3A%0ATravel%20Date%3A%0APassengers%3A%0A%0APlease%20share%20the%20fare%20and%20availability." target="_blank" rel="noopener noreferrer">
+                        <span>Book Service</span>
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Fleet Section -->
+<section class="py-24 bg-[#163A34] text-white" id="fleet">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-[#D97745] font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Our Luxury Fleet</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold">Choose Your Comfort</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Swift Dzire -->
+            <div class="bg-slate-900 rounded-[2rem] overflow-hidden border border-slate-800 hover:border-blue-500/50 transition-all group flex flex-col justify-between">
+                <div class="h-56 relative overflow-hidden">
+                    <img alt="Swift Dzire" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmlfnT12Ag0TfxcNua2KfSUOqQ9yhLraRGy4XAhqhRiRXbZBY2ihQiurEA4BNArkyOjDlYRXBSi8Bk3E_r1auibCW-M2csBilbpmWpNHujP48xy5t30kKhVAMxXhQXDal8Efm8AhQbx1osji5mQ3igpAyZsueODVbOJ33wrID5oKB8Yy1DfU1ZOjmhCRBmykKAU8KdNyCAZgDwZ7C7PGdkLIwXn4RTi_knJtkidivONrAv1AchecOCaA"/>
+                    <div class="absolute top-4 right-4 bg-[#227A65] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">₹11/km</div>
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-2xl font-bold">Swift Dzire</h3>
+                        </div>
+                        <div class="inline-flex items-center gap-1.5 bg-emerald-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold px-3 py-1 rounded-full mb-4"><span>✨</span> Best for City Travel</div>
+                        <div class="grid grid-cols-2 gap-4 mb-8 text-sm text-slate-400">
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">ac_unit</span> Fully AC</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">verified_user</span> Professional Driver</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">cleaning_services</span> Clean Vehicle</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">groups</span> 4+1 Seater</div>
+                        </div>
+                    </div>
+                    <a class="w-full bg-white text-[#163A34] py-4 rounded-xl font-bold hover:bg-emerald-500 hover:text-white transition-all flex items-center justify-center gap-2" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%0A%0AI%20would%20like%20to%20book%20the%20Swift%20Dzire.%0A%0APickup%20Location%3A%0ADrop%20Location%3A%0ADate%3A%0ATime%3A%0APassengers%3A%0A%0APlease%20share%20the%20fare%20and%20availability." target="_blank" rel="noopener noreferrer">Book Now</a>
+                </div>
+            </div>
+            <!-- Hyundai Aura -->
+            <div class="bg-slate-900 rounded-[2rem] overflow-hidden border border-slate-800 hover:border-blue-500/50 transition-all group flex flex-col justify-between">
+                <div class="h-56 relative overflow-hidden">
+                    <img alt="Hyundai Aura" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="images/hyundai_aura.jpg"/>
+                    <div class="absolute top-4 right-4 bg-[#227A65] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">₹11/km</div>
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-2xl font-bold">Hyundai Aura</h3>
+                        </div>
+                        <div class="inline-flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold px-3 py-1 rounded-full mb-4"><span>💡</span> Budget Friendly</div>
+                        <div class="grid grid-cols-2 gap-4 mb-8 text-sm text-slate-400">
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">ac_unit</span> Fully AC</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">verified_user</span> Professional Driver</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">cleaning_services</span> Clean Vehicle</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">groups</span> 4+1 Seater</div>
+                        </div>
+                    </div>
+                    <a class="w-full bg-white text-[#163A34] py-4 rounded-xl font-bold hover:bg-emerald-500 hover:text-white transition-all flex items-center justify-center gap-2" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%0A%0AI%20would%20like%20to%20book%20the%20Hyundai%20Aura.%0A%0APickup%20Location%3A%0ADrop%20Location%3A%0ADate%3A%0ATime%3A%0APassengers%3A%0A%0APlease%20share%20the%20fare%20and%20availability." target="_blank" rel="noopener noreferrer">Book Now</a>
+                </div>
+            </div>
+            <!-- Ertiga -->
+            <div class="bg-slate-900 rounded-[2rem] overflow-hidden border border-slate-800 hover:border-blue-500/50 transition-all group flex flex-col justify-between">
+                <div class="h-56 relative overflow-hidden">
+                    <img alt="Maruti Ertiga" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVD0hQwIhj782tngEql9v7vd0ozN7mzVAlBBmdrxuninr2cIViBg4aZAU0oVxawrEwuI45tHIRToSePaggE_p8wY1JE8cBfUV3Mwf8EI39ElDz9_n2F0850Bs7TrGF8M3Om1ghe9rJ0SgbGQO46i9tYLdZo3hVIZxxlnghvJ9hHOaTFRflo9DdJQHgy-92BQpPNZuCGPoOEieq_E-RQIr0YVL2Qb-r9bnELsS_sCWCtLHujZ_z2nG_dg"/>
+                    <div class="absolute top-4 right-4 bg-[#227A65] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">₹13/km</div>
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-2xl font-bold">Maruti Ertiga</h3>
+                        </div>
+                        <div class="inline-flex items-center gap-1.5 bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold px-3 py-1 rounded-full mb-4"><span>👨‍👩‍👧‍👦</span> Perfect for Families</div>
+                        <div class="grid grid-cols-2 gap-4 mb-8 text-sm text-slate-400">
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">ac_unit</span> Fully AC</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">verified_user</span> Professional Driver</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">cleaning_services</span> Clean Vehicle</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">groups</span> 6+1 Seater</div>
+                        </div>
+                    </div>
+                    <a class="w-full bg-white text-[#163A34] py-4 rounded-xl font-bold hover:bg-emerald-500 hover:text-white transition-all flex items-center justify-center gap-2" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%0A%0AI%20would%20like%20to%20book%20the%20Ertiga.%0A%0APickup%20Location%3A%0ADrop%20Location%3A%0ADate%3A%0ATime%3A%0APassengers%3A%0A%0APlease%20share%20the%20fare%20and%20availability." target="_blank" rel="noopener noreferrer">Book Now</a>
+                </div>
+            </div>
+            <!-- Innova Crysta (Highlighted Premium Choice) -->
+            <div class="bg-slate-900 rounded-[2rem] overflow-hidden border-2 border-[#D97745]/80 shadow-xl shadow-amber-500/10 hover:border-[#D97745] transition-all group flex flex-col justify-between relative">
+                <div class="h-56 relative overflow-hidden">
+                    <img alt="Innova Crysta" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXDxfwA_CwzBLEXwg2H6tlGoTkCJ_XJCfe0NWddTWwAk3yz3j2B4HdFlgvTck-lVjASx7Xg77g0wJpjs9c-AqoezyivuKxjsCjX3IQPmU3SpnYnSN5KKV_9rraUehkA6ZeN9t_V74yXI4CH1OzqnWHWRN-SpAMXmNkF92FQItxbbmILmLsdkqCe4XmyFE7mQ2ppy5Llln7MBwQioa8_RLtyVwFB294y4BxPmEVG32FOny9Vb0pCuvaCQ"/>
+                    <div class="absolute top-4 left-4 bg-gradient-to-r from-[#D97745] to-amber-600 text-slate-950 px-3 py-1 rounded-full text-xs font-extrabold tracking-wide flex items-center gap-1 shadow-md"><span>⭐</span> Most Booked</div>
+                    <div class="absolute top-4 right-4 bg-[#227A65] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">₹18/km</div>
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-2xl font-bold text-white">Innova Crysta</h3>
+                        </div>
+                        <div class="inline-flex items-center gap-1.5 bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-bold px-3 py-1 rounded-full mb-4"><span>👑</span> Most Booked Premium SUV</div>
+                        <div class="grid grid-cols-2 gap-4 mb-8 text-sm text-slate-400">
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">ac_unit</span> Fully AC</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">verified_user</span> Professional Driver</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">cleaning_services</span> Clean Vehicle</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">groups</span> 7+1 Seater</div>
+                        </div>
+                    </div>
+                    <a class="w-full bg-gradient-to-r from-[#D97745] to-amber-500 text-slate-950 py-4 rounded-xl font-black hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%0A%0AI%20would%20like%20to%20book%20the%20Innova%20Crysta.%0A%0APickup%20Location%3A%0ADrop%20Location%3A%0ADate%3A%0ATime%3A%0APassengers%3A%0A%0APlease%20share%20the%20fare%20and%20availability." target="_blank" rel="noopener noreferrer">Book Now</a>
+                </div>
+            </div>
+            <!-- Tempo Traveller -->
+            <div class="bg-slate-900 rounded-[2rem] overflow-hidden border border-slate-800 hover:border-blue-500/50 transition-all group flex flex-col justify-between">
+                <div class="h-56 relative overflow-hidden">
+                    <img alt="Tempo Traveller" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLSj7fXfXc5p4jYk6UKc77URpiWPLmTSJSCRW-iL-8eh5Jk5bMECXIMr0KY80wujzlYhQvbbnsBagypvlgb3hs_o5_ZQBq-APwUMHYcBfcagNb0k2tQF6_Unr5LheAdQF0PAAjsIH7_77rw0JVG7gukQWLp8jD6zod02Zd_zHWEAsy_sztSIVVoZgUD0qgtbeU7iJcQAP92NI27ZzpO1xqP7LOloYqzWs2jVbSzKVFV_QD35S76RNrQw"/>
+                    <div class="absolute top-4 right-4 bg-[#227A65] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">₹24/km</div>
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-2xl font-bold">Tempo Traveller</h3>
+                        </div>
+                        <div class="inline-flex items-center gap-1.5 bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold px-3 py-1 rounded-full mb-4"><span>🚌</span> Ideal for Group Travel</div>
+                        <div class="grid grid-cols-2 gap-4 mb-8 text-sm text-slate-400">
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">ac_unit</span> Fully AC</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">verified_user</span> Professional Driver</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">cleaning_services</span> Clean Vehicle</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">groups</span> 12-26 Seater</div>
+                        </div>
+                    </div>
+                    <a class="w-full bg-white text-[#163A34] py-4 rounded-xl font-bold hover:bg-emerald-500 hover:text-white transition-all flex items-center justify-center gap-2" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%0A%0AI%20would%20like%20to%20book%20the%20Tempo%20Traveller.%0A%0APickup%20Location%3A%0ADestination%3A%0ADate%3A%0APassengers%3A%0A%0APlease%20share%20the%20quotation%20and%20availability." target="_blank" rel="noopener noreferrer">Book Now</a>
+                </div>
+            </div>
+            <!-- Force Urbania -->
+            <div class="bg-slate-900 rounded-[2rem] overflow-hidden border border-slate-800 hover:border-blue-500/50 transition-all group flex flex-col justify-between">
+                <div class="h-56 relative overflow-hidden">
+                    <img alt="Force Urbania" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWESvMKCyywlN1Oz8z6ehCvmpjB7sWRPjP447dckVHqfWBPfN50ce4avuY1kfEuldRFtC-26FBX0WzORfayTBIH3GDpTB0GHBZnBs400xjahRMR3LbexbD_pIgd9eRUf2JT0fl5Munwvmc02kX4Ils6IizH24V2Bwpyr5MGDyyq2l-9WtqhHf0PncsdXB-TMbAQEJPXkMQUFER2Flv8Mc6U996fmK8kvh2rrDojNxje_w99Zg7h_I7Xw"/>
+                    <div class="absolute top-4 right-4 bg-[#227A65] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">₹33/km</div>
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-2xl font-bold">Force Urbania</h3>
+                        </div>
+                        <div class="inline-flex items-center gap-1.5 bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-semibold px-3 py-1 rounded-full mb-4"><span>✨</span> Luxury Group Travel</div>
+                        <div class="grid grid-cols-2 gap-4 mb-8 text-sm text-slate-400">
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">ac_unit</span> Fully AC</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">verified_user</span> Professional Driver</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">cleaning_services</span> Clean Vehicle</div>
+                            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#D97745] text-lg">groups</span> 13-17 Seater</div>
+                        </div>
+                    </div>
+                    <a class="w-full bg-white text-[#163A34] py-4 rounded-xl font-bold hover:bg-emerald-500 hover:text-white transition-all flex items-center justify-center gap-2" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%0A%0AI%20would%20like%20to%20book%20the%20Force%20Urbania.%0A%0APickup%20Location%3A%0ADestination%3A%0ADate%3A%0APassengers%3A%0A%0APlease%20share%20the%20quotation%20and%20availability." target="_blank" rel="noopener noreferrer">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Rental Package Banner -->
+<section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="bg-gradient-to-r from-[#163A34] to-[#227A65] rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="relative z-10 text-white max-w-xl">
+                <span class="text-[#D97745] font-bold uppercase tracking-widest text-xs mb-4 block">Limited Time Offer</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">Special Rental Packages - <span class="text-[#D97745]">Starting From ₹3000</span></h2>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-white/10 text-sm">
+                        <span class="material-symbols-outlined text-[#D97745] text-lg">distance</span> 100 KM Included
+                    </div>
+                    <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-white/10 text-sm">
+                        <span class="material-symbols-outlined text-[#D97745] text-lg">badge</span> Driver Included
+                    </div>
+                </div>
+                <p class="text-slate-300 text-lg">Perfect for Corporate events, Weddings, Family Trips &amp; Local Sightseeing.</p>
+            </div>
+            <div class="relative z-10 shrink-0">
+                <a class="bg-[#D97745] text-[#163A34] px-12 py-6 rounded-2xl font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-[#D97745]/20 inline-block text-center" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%0A%0AI%20am%20interested%20in%20your%20Rental%20Package.%0A%0APickup%20Location%3A%0ADate%3A%0ATime%3A%0AVehicle%20Preference%3A%0AApproximate%20Duration%3A%0AExpected%20Running%20%28KM%29%3A%0A%0APlease%20share%20the%20complete%20quotation%20and%20availability." target="_blank" rel="noopener noreferrer">Book Rental</a>
+            </div>
+            <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 flex items-center justify-end">
+                <span class="material-symbols-outlined text-[300px]">car_rental</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Central India trips -->
+<section class="bg-[#FAF7EF] py-20" id="routes">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div class="mb-10 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+            <div><span class="mb-3 block text-xs font-bold uppercase tracking-[0.2em] text-[#227A65]">Popular trips</span><h2 class="font-serif text-4xl font-semibold text-[#163A34] sm:text-5xl">Start from your city</h2></div>
+            <p class="max-w-md border-l-2 border-[#D97745] pl-5 leading-7 text-[#68766F]">Choose a route from Indore, Ujjain or Bhopal. Tell us your dates and we’ll help plan the ride.</p>
+        </div>
+        <div class="mb-8 flex flex-wrap gap-2"><span class="rounded-full bg-[#E8F0E9] px-4 py-2 text-sm font-semibold text-[#1A5A4C]">Indore departures</span><span class="rounded-full bg-[#F4E9DE] px-4 py-2 text-sm font-semibold text-[#9D5738]">Ujjain departures</span><span class="rounded-full bg-[#E9ECE6] px-4 py-2 text-sm font-semibold text-[#52645D]">Bhopal departures</span></div>
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"><article class="overflow-hidden rounded-2xl border border-[#E8E2D6] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                <div class="relative h-48 overflow-hidden"><img alt="Indore to Ujjain tour" class="h-full w-full object-cover transition duration-500 hover:scale-105" src="images/route_ujjain.jpg"/><span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#227A65]">FROM INDORE</span></div>
+                <div class="p-5"><h3 class="font-serif text-2xl font-semibold text-[#163A34]">Indore <span class="text-[#D97745]">→</span> Ujjain</h3><p class="mt-2 text-sm text-[#68766F]">Temple visit and day trip</p><a class="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#E8F0E9] px-4 py-2.5 text-sm font-bold text-[#1A5A4C] transition hover:bg-[#227A65] hover:text-white" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%20I%20am%20interested%20in%20a%20trip%20from%20Indore%20to%20Ujjain.%20Please%20share%20the%20details%20and%20fare." target="_blank" rel="noopener noreferrer">Ask about this trip <span aria-hidden="true">↗</span></a></div>
+            </article><article class="overflow-hidden rounded-2xl border border-[#E8E2D6] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                <div class="relative h-48 overflow-hidden"><img alt="Indore to Omkareshwar tour" class="h-full w-full object-cover transition duration-500 hover:scale-105" src="images/route_omkareshwar.jpg"/><span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#227A65]">FROM INDORE</span></div>
+                <div class="p-5"><h3 class="font-serif text-2xl font-semibold text-[#163A34]">Indore <span class="text-[#D97745]">→</span> Omkareshwar</h3><p class="mt-2 text-sm text-[#68766F]">Jyotirlinga and Narmada darshan</p><a class="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#E8F0E9] px-4 py-2.5 text-sm font-bold text-[#1A5A4C] transition hover:bg-[#227A65] hover:text-white" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%20I%20am%20interested%20in%20a%20trip%20from%20Indore%20to%20Omkareshwar.%20Please%20share%20the%20details%20and%20fare." target="_blank" rel="noopener noreferrer">Ask about this trip <span aria-hidden="true">↗</span></a></div>
+            </article><article class="overflow-hidden rounded-2xl border border-[#E8E2D6] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                <div class="relative h-48 overflow-hidden"><img alt="Indore to Maheshwar tour" class="h-full w-full object-cover transition duration-500 hover:scale-105" src="images/route_maheshwar.jpg"/><span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#227A65]">FROM INDORE</span></div>
+                <div class="p-5"><h3 class="font-serif text-2xl font-semibold text-[#163A34]">Indore <span class="text-[#D97745]">→</span> Maheshwar</h3><p class="mt-2 text-sm text-[#68766F]">Fort, ghats and riverside visit</p><a class="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#E8F0E9] px-4 py-2.5 text-sm font-bold text-[#1A5A4C] transition hover:bg-[#227A65] hover:text-white" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%20I%20am%20interested%20in%20a%20trip%20from%20Indore%20to%20Maheshwar.%20Please%20share%20the%20details%20and%20fare." target="_blank" rel="noopener noreferrer">Ask about this trip <span aria-hidden="true">↗</span></a></div>
+            </article><article class="overflow-hidden rounded-2xl border border-[#E8E2D6] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                <div class="relative h-48 overflow-hidden"><img alt="Indore to Mandu tour" class="h-full w-full object-cover transition duration-500 hover:scale-105" src="images/route_mandav.jpg"/><span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#227A65]">FROM INDORE</span></div>
+                <div class="p-5"><h3 class="font-serif text-2xl font-semibold text-[#163A34]">Indore <span class="text-[#D97745]">→</span> Mandu</h3><p class="mt-2 text-sm text-[#68766F]">Heritage day trip</p><a class="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#E8F0E9] px-4 py-2.5 text-sm font-bold text-[#1A5A4C] transition hover:bg-[#227A65] hover:text-white" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%20I%20am%20interested%20in%20a%20trip%20from%20Indore%20to%20Mandu.%20Please%20share%20the%20details%20and%20fare." target="_blank" rel="noopener noreferrer">Ask about this trip <span aria-hidden="true">↗</span></a></div>
+            </article><article class="overflow-hidden rounded-2xl border border-[#E8E2D6] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                <div class="relative h-48 overflow-hidden"><img alt="Indore to Bhopal tour" class="h-full w-full object-cover transition duration-500 hover:scale-105" src="images/route_bhopal.jpg"/><span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#227A65]">FROM INDORE</span></div>
+                <div class="p-5"><h3 class="font-serif text-2xl font-semibold text-[#163A34]">Indore <span class="text-[#D97745]">→</span> Bhopal</h3><p class="mt-2 text-sm text-[#68766F]">Capital city intercity ride</p><a class="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#E8F0E9] px-4 py-2.5 text-sm font-bold text-[#1A5A4C] transition hover:bg-[#227A65] hover:text-white" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%20I%20am%20interested%20in%20a%20trip%20from%20Indore%20to%20Bhopal.%20Please%20share%20the%20details%20and%20fare." target="_blank" rel="noopener noreferrer">Ask about this trip <span aria-hidden="true">↗</span></a></div>
+            </article><article class="overflow-hidden rounded-2xl border border-[#E8E2D6] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                <div class="relative h-48 overflow-hidden"><img alt="Ujjain to Omkareshwar tour" class="h-full w-full object-cover transition duration-500 hover:scale-105" src="images/route_omkareshwar.jpg"/><span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#227A65]">FROM UJJAIN</span></div>
+                <div class="p-5"><h3 class="font-serif text-2xl font-semibold text-[#163A34]">Ujjain <span class="text-[#D97745]">→</span> Omkareshwar</h3><p class="mt-2 text-sm text-[#68766F]">Temple circuit and Narmada visit</p><a class="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#E8F0E9] px-4 py-2.5 text-sm font-bold text-[#1A5A4C] transition hover:bg-[#227A65] hover:text-white" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%20I%20am%20interested%20in%20a%20trip%20from%20Ujjain%20to%20Omkareshwar.%20Please%20share%20the%20details%20and%20fare." target="_blank" rel="noopener noreferrer">Ask about this trip <span aria-hidden="true">↗</span></a></div>
+            </article><article class="overflow-hidden rounded-2xl border border-[#E8E2D6] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                <div class="relative h-48 overflow-hidden"><img alt="Ujjain to Bhopal tour" class="h-full w-full object-cover transition duration-500 hover:scale-105" src="images/route_bhopal.jpg"/><span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#227A65]">FROM UJJAIN</span></div>
+                <div class="p-5"><h3 class="font-serif text-2xl font-semibold text-[#163A34]">Ujjain <span class="text-[#D97745]">→</span> Bhopal</h3><p class="mt-2 text-sm text-[#68766F]">Intercity ride to the capital</p><a class="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#E8F0E9] px-4 py-2.5 text-sm font-bold text-[#1A5A4C] transition hover:bg-[#227A65] hover:text-white" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%20I%20am%20interested%20in%20a%20trip%20from%20Ujjain%20to%20Bhopal.%20Please%20share%20the%20details%20and%20fare." target="_blank" rel="noopener noreferrer">Ask about this trip <span aria-hidden="true">↗</span></a></div>
+            </article><article class="overflow-hidden rounded-2xl border border-[#E8E2D6] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                <div class="relative h-48 overflow-hidden"><img alt="Bhopal to Sanchi tour" class="h-full w-full object-cover transition duration-500 hover:scale-105" src="images/route_bhopal.jpg"/><span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#227A65]">FROM BHOPAL</span></div>
+                <div class="p-5"><h3 class="font-serif text-2xl font-semibold text-[#163A34]">Bhopal <span class="text-[#D97745]">→</span> Sanchi</h3><p class="mt-2 text-sm text-[#68766F]">Stupa and heritage day tour</p><a class="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#E8F0E9] px-4 py-2.5 text-sm font-bold text-[#1A5A4C] transition hover:bg-[#227A65] hover:text-white" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%20I%20am%20interested%20in%20a%20trip%20from%20Bhopal%20to%20Sanchi.%20Please%20share%20the%20details%20and%20fare." target="_blank" rel="noopener noreferrer">Ask about this trip <span aria-hidden="true">↗</span></a></div>
+            </article><article class="overflow-hidden rounded-2xl border border-[#E8E2D6] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                <div class="relative h-48 overflow-hidden"><img alt="Bhopal to Bhimbetka tour" class="h-full w-full object-cover transition duration-500 hover:scale-105" src="images/awasya-scenic-drive.png"/><span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#227A65]">FROM BHOPAL</span></div>
+                <div class="p-5"><h3 class="font-serif text-2xl font-semibold text-[#163A34]">Bhopal <span class="text-[#D97745]">→</span> Bhimbetka</h3><p class="mt-2 text-sm text-[#68766F]">Rock shelters and heritage tour</p><a class="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#E8F0E9] px-4 py-2.5 text-sm font-bold text-[#1A5A4C] transition hover:bg-[#227A65] hover:text-white" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%20I%20am%20interested%20in%20a%20trip%20from%20Bhopal%20to%20Bhimbetka.%20Please%20share%20the%20details%20and%20fare." target="_blank" rel="noopener noreferrer">Ask about this trip <span aria-hidden="true">↗</span></a></div>
+            </article><article class="overflow-hidden rounded-2xl border border-[#E8E2D6] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                <div class="relative h-48 overflow-hidden"><img alt="Bhopal to Ujjain tour" class="h-full w-full object-cover transition duration-500 hover:scale-105" src="images/route_ujjain.jpg"/><span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#227A65]">FROM BHOPAL</span></div>
+                <div class="p-5"><h3 class="font-serif text-2xl font-semibold text-[#163A34]">Bhopal <span class="text-[#D97745]">→</span> Ujjain</h3><p class="mt-2 text-sm text-[#68766F]">Mahakaleshwar temple trip</p><a class="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#E8F0E9] px-4 py-2.5 text-sm font-bold text-[#1A5A4C] transition hover:bg-[#227A65] hover:text-white" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%20I%20am%20interested%20in%20a%20trip%20from%20Bhopal%20to%20Ujjain.%20Please%20share%20the%20details%20and%20fare." target="_blank" rel="noopener noreferrer">Ask about this trip <span aria-hidden="true">↗</span></a></div>
+            </article><article class="overflow-hidden rounded-2xl border border-[#E8E2D6] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                <div class="relative h-48 overflow-hidden"><img alt="Bhopal to Pachmarhi tour" class="h-full w-full object-cover transition duration-500 hover:scale-105" src="images/awasya-scenic-drive.png"/><span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#227A65]">FROM BHOPAL</span></div>
+                <div class="p-5"><h3 class="font-serif text-2xl font-semibold text-[#163A34]">Bhopal <span class="text-[#D97745]">→</span> Pachmarhi</h3><p class="mt-2 text-sm text-[#68766F]">Hill station getaway</p><a class="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#E8F0E9] px-4 py-2.5 text-sm font-bold text-[#1A5A4C] transition hover:bg-[#227A65] hover:text-white" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%20I%20am%20interested%20in%20a%20trip%20from%20Bhopal%20to%20Pachmarhi.%20Please%20share%20the%20details%20and%20fare." target="_blank" rel="noopener noreferrer">Ask about this trip <span aria-hidden="true">↗</span></a></div>
+            </article></div>
+    </div>
+</section>
+
+<!-- Quote planning band -->
+<section class="bg-white py-16">
+    <div class="mx-auto flex max-w-7xl flex-col gap-8 rounded-[2rem] bg-[#163A34] px-7 py-10 text-white sm:px-10 md:flex-row md:items-center md:justify-between">
+        <div class="max-w-2xl"><span class="text-xs font-bold uppercase tracking-[0.2em] text-[#E9AA83]">Your trip, your plan</span><h2 class="mt-3 font-serif text-3xl font-semibold sm:text-4xl">Get a quote for your route</h2><p class="mt-3 leading-7 text-white/75">Share your pickup city, destination and travel date. We’ll help you choose a suitable ride and plan the details.</p></div>
+        <a class="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-[#E9AA83] px-6 py-4 font-bold text-[#163A34] transition hover:bg-white" href="https://wa.me/919926547855?text=Hello%20Awasya%20Tour%20and%20Travels%2C%20please%20share%20a%20quote%20for%20my%20trip." target="_blank" rel="noopener noreferrer">Request a quote <span aria-hidden="true">↗</span></a>
+    </div>
+</section>
+
+<!-- Why Choose Us / Advantage -->
+<section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-[#163A34]">The Travel that fits your plans</h2>
+            <p class="text-slate-500 mt-4 text-lg">Serving Indore, Bhopal and Ujjain</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-10">
+            <div class="text-center group">
+                <div class="w-20 h-20 mx-auto rounded-3xl bg-emerald-50 text-[#227A65] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-4xl">schedule</span>
+                </div>
+                <h4 class="font-bold text-[#163A34]">24/7 Service</h4>
+            </div>
+            <div class="text-center group">
+                <div class="w-20 h-20 mx-auto rounded-3xl bg-emerald-50 text-[#227A65] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-4xl">badge</span>
+                </div>
+                <h4 class="font-bold text-[#163A34]">Professional</h4>
+            </div>
+            <div class="text-center group">
+                <div class="w-20 h-20 mx-auto rounded-3xl bg-emerald-50 text-[#227A65] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-4xl">sanitizer</span>
+                </div>
+                <h4 class="font-bold text-[#163A34]">Sanitized</h4>
+            </div>
+            <div class="text-center group">
+                <div class="w-20 h-20 mx-auto rounded-3xl bg-emerald-50 text-[#227A65] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-4xl">security</span>
+                </div>
+                <h4 class="font-bold text-[#163A34]">Family Safe</h4>
+            </div>
+            <div class="text-center group">
+                <div class="w-20 h-20 mx-auto rounded-3xl bg-emerald-50 text-[#227A65] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-4xl">payments</span>
+                </div>
+                <h4 class="font-bold text-[#163A34]">Best Price</h4>
+            </div>
+            <div class="text-center group">
+                <div class="w-20 h-20 mx-auto rounded-3xl bg-emerald-50 text-[#227A65] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-4xl">my_location</span>
+                </div>
+                <h4 class="font-bold text-[#163A34]">GPS Tracked</h4>
+            </div>
+            <div class="text-center group">
+                <div class="w-20 h-20 mx-auto rounded-3xl bg-emerald-50 text-[#227A65] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-4xl">verified</span>
+                </div>
+                <h4 class="font-bold text-[#163A34]">Punctual</h4>
+            </div>
+            <div class="text-center group">
+                <div class="w-20 h-20 mx-auto rounded-3xl bg-emerald-50 text-[#227A65] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-4xl">stars</span>
+                </div>
+                <h4 class="font-bold text-[#163A34]">Elite Fleet</h4>
+            </div>
+            <div class="text-center group">
+                <div class="w-20 h-20 mx-auto rounded-3xl bg-emerald-50 text-[#227A65] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-4xl">headset_mic</span>
+                </div>
+                <h4 class="font-bold text-[#163A34]">Dedicated Help</h4>
+            </div>
+            <div class="text-center group">
+                <div class="w-20 h-20 mx-auto rounded-3xl bg-emerald-50 text-[#227A65] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-4xl">directions_car</span>
+                </div>
+                <h4 class="font-bold text-[#163A34]">Tourist Permit</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking & Contact Section -->
+<section class="py-24 bg-[#FAF7EF]" id="booking">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <!-- Form Card -->
+            <div class="glass-card p-10 md:p-12 rounded-[3rem] premium-shadow border border-white">
+                <h2 class="text-3xl font-extrabold text-[#163A34] mb-8">Book Your Premium Ride</h2>
+                <form class="space-y-6" id="bookingForm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Full Name</label>
+                            <input class="w-full bg-slate-100/50 border-transparent rounded-2xl p-4 focus:ring-2 focus:ring-[#227A65] focus:bg-white transition-all font-medium" id="name" placeholder="Rahul Sharma" required="" type="text"/>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Phone Number</label>
+                            <input class="w-full bg-slate-100/50 border-transparent rounded-2xl p-4 focus:ring-2 focus:ring-[#227A65] focus:bg-white transition-all font-medium" id="phone" placeholder="99265 47855" required="" type="tel"/>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Pickup From</label>
+                            <input class="w-full bg-slate-100/50 border-transparent rounded-2xl p-4 focus:ring-2 focus:ring-[#227A65] focus:bg-white transition-all font-medium" id="pickup" placeholder="Airport, Home, Office" required="" type="text"/>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Destination</label>
+                            <input class="w-full bg-slate-100/50 border-transparent rounded-2xl p-4 focus:ring-2 focus:ring-[#227A65] focus:bg-white transition-all font-medium" id="destination" placeholder="Ujjain, Omkareshwar, etc." required="" type="text"/>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Date</label>
+                            <input class="w-full bg-slate-100/50 border-transparent rounded-2xl p-4 focus:ring-2 focus:ring-[#227A65] focus:bg-white transition-all font-medium" id="date" required="" type="date"/>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Time</label>
+                            <input class="w-full bg-slate-100/50 border-transparent rounded-2xl p-4 focus:ring-2 focus:ring-[#227A65] focus:bg-white transition-all font-medium" id="time" required="" type="time"/>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Preferred Car</label>
+                            <select class="w-full bg-slate-100/50 border-transparent rounded-2xl p-4 focus:ring-2 focus:ring-[#227A65] focus:bg-white transition-all font-medium appearance-none" id="vehicle">
+                                <option>Swift Dzire</option>
+                                <option>Hyundai Aura</option>
+                                <option>Ertiga</option>
+                                <option>Innova Crysta</option>
+                                <option>Tempo Traveller</option>
+                                <option>Force Urbania</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Message (Optional)</label>
+                        <textarea class="w-full bg-slate-100/50 border-transparent rounded-2xl p-4 focus:ring-2 focus:ring-[#227A65] focus:bg-white transition-all font-medium" id="message" placeholder="Any special requests?" rows="3"></textarea>
+                    </div>
+                    <button class="w-full bg-[#25D366] text-white py-6 rounded-2xl font-black text-xl flex items-center justify-center gap-4 hover:bg-[#1ebc56] transition-all shadow-xl shadow-green-500/20 active:scale-95" type="submit">
+                        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.538-2.961-2.654-.087-.116-.708-.943-.708-1.798 0-.855.449-1.275.609-1.449.159-.174.347-.217.463-.217l.333.005c.106.005.246-.04.384.293.144.348.491 1.203.535 1.29.044.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.777 1.394.864.174.087.275.072.376-.044.101-.116.434-.506.549-.68.116-.174.231-.145.39-.087s1.013.477 1.186.564c.174.087.289.13.333.203.044.072.044.419-.1.824z"></path></svg>
+                        Send on WhatsApp
+                    </button>
+                </form>
+            </div>
+            <!-- Map & Contact Info -->
+            <div class="space-y-10">
+                <div class="rounded-[3rem] overflow-hidden shadow-2xl h-[400px] border border-white">
+                    <iframe title="Map of Indore, Bhopal and Ujjain" allowfullscreen="" height="100%" loading="lazy" src="https://www.google.com/maps?q=Indore%2C%20Bhopal%2C%20Ujjain%20Madhya%20Pradesh&output=embed" style="border:0;" width="100%"></iframe>
+                </div>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="bg-white p-8 rounded-[2.5rem] shadow-lg flex items-center gap-6 min-w-0 group hover:bg-[#227A65] transition-all hover:text-white">
+                        <div class="w-16 h-16 rounded-2xl bg-emerald-50 text-[#227A65] flex items-center justify-center shrink-0 group-hover:bg-white/10 group-hover:text-white">
+                            <span class="material-symbols-outlined text-3xl">call</span>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="text-xs font-bold uppercase tracking-widest opacity-60">Primary Contact</p>
+                            <a class="inline-block text-2xl font-black" href="tel:9926547855">99265 47855</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#163A34] text-white pt-24 pb-12 rounded-t-[5rem]">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+            <div class="col-span-1 md:col-span-1">
+                <a class="inline-block mb-8" href="#">
+                    <span class="font-extrabold text-2xl tracking-tighter">Awasya Tour and Travels</span>
+                </a>
+                <p class="text-slate-400 leading-relaxed mb-8">Local and outstation taxi services across Indore, Bhopal and Ujjain. Contact us to plan your trip.</p>
+                <div class="flex gap-4">
+                    <a class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-[#227A65] transition-all" href="#"><span class="material-symbols-outlined text-xl">share</span></a>
+                    <a class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-[#227A65] transition-all" href="#"><span class="material-symbols-outlined text-xl">camera</span></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-8">Quick Links</h4>
+                <ul class="space-y-4 text-slate-400">
+                    <li><a class="hover:text-white transition-colors" href="#services" onclick="closeMobileMenu()">Our Services</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#fleet" onclick="closeMobileMenu()">Luxury Fleet</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#routes" onclick="closeMobileMenu()">Outstations</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#about" onclick="closeMobileMenu()">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-8">Our Services</h4>
+                <ul class="space-y-4 text-slate-400">
+                    <li>Airport Transfers</li>
+                    <li>Corporate Rentals</li>
+                    <li>City Sightseeing</li>
+                    <li>Wedding Car Rentals</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-8">Business Info</h4>
+                <ul class="space-y-4 text-slate-400">
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-[#227A65]">location_on</span>
+                        <span>Serving Indore, Bhopal &amp; Ujjain, <br/>Madhya Pradesh</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-[#227A65]">call</span>
+                        <span>+91 9926547855</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-[#227A65]">history_toggle_off</span>
+                        <span>Mon - Sun: 24 Hours</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500">
+            <p>© 2026 Awasya Tour and Travels. All rights reserved. Taxi and Travel Services.</p>
+            <div class="flex gap-8">
+                <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+                <a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating Action Buttons -->
+<div class="fixed bottom-6 left-5 md:bottom-8 md:left-8 z-[100] group">
+    <a class="bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform" href="https://wa.me/919926547855">
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.538-2.961-2.654-.087-.116-.708-.943-.708-1.798 0-.855.449-1.275.609-1.449.159-.174.347-.217.463-.217l.333.005c.106.005.246-.04.384.293.144.348.491 1.203.535 1.29.044.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.777 1.394.864.174.087.275.072.376-.044.101-.116.434-.506.549-.68.116-.174.231-.145.39-.087s1.013.477 1.186.564c.174.087.289.13.333.203.044.072.044.419-.1.824z"></path></svg>
+    </a>
+</div>
+<div class="fixed bottom-6 right-5 md:bottom-8 md:right-8 z-[100]">
+    <a class="bg-[#163A34] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform" href="tel:9926547855">
+        <span class="material-symbols-outlined text-2xl">phone</span>
+    </a>
+</div>
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const btn = document.getElementById('mobileMenuBtn');
+        if (menu) {
+            menu.classList.toggle('hidden');
+            if (btn) btn.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+        }
+    }
+    function closeMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const btn = document.getElementById('mobileMenuBtn');
+        if (menu) menu.classList.add('hidden');
+        if (btn) btn.textContent = 'menu';
+    }
+    const bookingForm = document.getElementById('bookingForm');
+    if (bookingForm) bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const fields = ['name', 'phone', 'pickup', 'destination', 'date', 'time', 'vehicle', 'message'];
+        const values = Object.fromEntries(fields.map(id => [id, document.getElementById(id)?.value || '']));
+        const whatsappText = [
+            'New Booking Request - Awasya Tour and Travels', '',
+            `Full Name: ${values.name}`, `Phone Number: ${values.phone}`,
+            `Pickup From: ${values.pickup}`, `Destination: ${values.destination}`,
+            `Date: ${values.date}`, `Time: ${values.time}`,
+            `Preferred Car: ${values.vehicle}`, `Message: ${values.message || 'N/A'}`
+        ].join('\n');
+        window.open(`https://wa.me/919926547855?text=${encodeURIComponent(whatsappText)}`, '_blank', 'noopener');
+    });
+</script>
+
+</body>
+</html>
